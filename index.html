@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina del panda de ICO</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 40px;
+            font-size: 40px;
+        }
+
+        /* Panda */
+        .panda {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin: 50px auto;
+        }
+
+        .head {
+            width: 200px;
+            height: 200px;
+            background: white;
+            border-radius: 50%;
+            position: relative;
+            margin: auto;
+            border: 3px solid black;
+        }
+
+        .ear {
+            width: 60px;
+            height: 60px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: -20px;
+        }
+
+        .ear.left {
+            left: 20px;
+        }
+
+        .ear.right {
+            right: 20px;
+        }
+
+        .eye-patch {
+            width: 45px;
+            height: 60px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 60px;
+        }
+
+        .eye-patch.left {
+            left: 40px;
+            transform: rotate(20deg);
+        }
+
+        .eye-patch.right {
+            right: 40px;
+            transform: rotate(-20deg);
+        }
+
+        .eye {
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 22px;
+            left: 15px;
+        }
+
+        .nose {
+            width: 25px;
+            height: 18px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            left: 87px;
+            top: 115px;
+        }
+
+        .mouth {
+            width: 40px;
+            height: 20px;
+            border-bottom: 3px solid black;
+            border-radius: 0 0 40px 40px;
+            position: absolute;
+            left: 80px;
+            top: 135px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pagina del panda de ICO</h1>
+
+    <div class="panda">
+        <div class="head">
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+
+            <div class="eye-patch left">
+                <div class="eye"></div>
+            </div>
+
+            <div class="eye-patch right">
+                <div class="eye"></div>
+            </div>
+
+            <div class="nose"></div>
+            <div class="mouth"></div>
+        </div>
+    </div>
+
+</body>
+</html>
