@@ -1,0 +1,29 @@
+name: Build and Save Docker Image
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: |
+          docker build -t mi-docker:latest .
+
+      - name: Save Docker Image
+        run: |
+          docker save -o mi-docker.tar mi-docker:latest
+
+      - name: Upload Docker Image Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mi-docker-image
+          path: mi-docker.tar
