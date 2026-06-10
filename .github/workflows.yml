@@ -1,0 +1,20 @@
+name: Build and Save Docker Image
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Image
+        # Que cambie "su-proyecto" por el nombre que él quiera
+        run: docker build -t mi-docker .
+      - name: Archive Image
+        # Que cambie el nombre del archivo .tar y ponga la misma etiqueta de arriba
+        run: docker save -o dockerima.tar mi-docker
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          # Solo es el nombre de la carpeta zip que descargas, puede dejarlo igual
+          name: docker-tar-image
+          # OBLIGATORIO: Debe ser exactamente el mismo nombre del archivo .tar de arriba
+          path: dockerima.tar
